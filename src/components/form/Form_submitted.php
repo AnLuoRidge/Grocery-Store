@@ -18,6 +18,8 @@
     $state=$_POST['tState'];
     $country=$_POST['countries'];
     $postcode=$_POST['tPCode'];
+    $date= date("Y/m/d");
+    $time= date("h:i:sa");
     ?>
     <p style="font-size: xx-large;">Your Delivery Details</p>
     Your name:
@@ -53,7 +55,8 @@ $subject = "Your order details";
 $message = "<p>Your Name : $firstName $lastName</p>
 <br/>
 <p>Your address is: $address ,</p> <br/>
-<p>$suburb, $state, $country, $postcode</p>";
+<p>$suburb, $state, $country, $postcode</p> <br/>
+<p>$date,$time</p>";
 
 // Always set content-type when sending HTML email
 $headers = "MIME-Version: 1.0" . "\r\n";
