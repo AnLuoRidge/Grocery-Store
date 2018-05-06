@@ -11,11 +11,11 @@
         <title>Delivery form</title>
 	</head>
 	<body>
-    <label style="font-family: 'Adobe Arabic';font-size: xx-large;">Please enter your details for delivery!</label>
+    <label style="font-family: Arial;font-size: xx-large;">Please enter your details for delivery!</label>
     <br/>
     <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
-		<form method="POST" action="Form_submitted.php">
-		<table>
+		<form name="purchaseForm" method="POST" action="Form_submitted.php">
+		<table style="font-family: Arial;">
 		<tr>
             <td>First Name: <span style="color:#FF0000">*</span></td>
             <td><input type="text" name="tFName" required></tr></td>
@@ -30,7 +30,7 @@
 			<tr><td>Country: <span style="color:#FF0000">*</span></td>
                 <td>
                     <select name="countries">
-                        <option value="Australia">Australia</option>
+<!--                        <option value="" selected="selected">Please select a country.</option>-->
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Albania">Albania</option>
                         <option value="Algeria">Algeria</option>
@@ -271,17 +271,36 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
-                </tr></td>
 
+                </tr></td>
             <tr><td>Post Code: <span style="color:#FF0000">*</span></td>
                 <td><input type="text" name = "tPCode" required></tr></td>
             <tr><td>Email: <span style="color:#FF0000">*</span></td>
-                <td><input type="text" name = "tEmail" required></tr></td>
+                <td><input type="text" name = "email" required></tr></td>
 
             <tr><td>
-			<input type= "submit" name="Confirm" value ="submit"></tr></td>
+			<input type= "submit" name="Confirm" value ="submit" onclick="ValidateEmail(document.purchaseForm.email)"></tr></td>
         </table>
 		</form>
+
+<!--  <script type="text/javascript">-->
+<!--      $emailAdd= "email";-->
+<!--        function ValidateEmail(email)-->
+<!--        {-->
+<!--            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;-->
+<!--            if($emailAdd.value.match(mailformat))-->
+<!--            {-->
+<!--                document.purchaseForm.email.focus();-->
+<!--                return true;-->
+<!--            }-->
+<!--            else-->
+<!--            {-->
+<!--                alert("You have entered an invalid email address!");-->
+<!--                document.purchaseForm.email.focus();-->
+<!--                return false;-->
+<!--            }-->
+<!--       }-->
+<!--    </script>-->
 	</body>
 
 </html>
