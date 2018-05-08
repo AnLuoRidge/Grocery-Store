@@ -9,7 +9,7 @@
 
 <frameset cols="50%,*"  style="border-bottom-width: medium;border: #264BBC">
 <!-- Add navigation page path to the source here-->
-    <frame src="" name="leftFrame">
+    <frame src="product-category/navi.html" name="leftFrame">
     <frameset rows="50%,*" >
 <!--Add product details page to the source here-->
         <frame src="form/Form.php" name="topRightFrame">
