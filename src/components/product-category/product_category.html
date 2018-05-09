@@ -282,7 +282,11 @@
         var nodeEnter = node.enter().append("g")
             .attr("class", "node")
             .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-            .on("mouseover", click)	//failed to add mouseover function
+            .on("mouseover", click)	// expand node
+            .on("mouseout", function() {
+                // Remove the info text on mouse out.
+                d3.select(this)
+            });
         ;
 
         nodeEnter.append("circle")
@@ -366,11 +370,6 @@
     }
 
 </script>
-<p id="demo"></p>
 
-<script>
-    var d = new Date();
-    document.getElementById("demo").innerHTML = d;
-</script>
 </body>
 </html>
