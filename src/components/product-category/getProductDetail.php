@@ -9,7 +9,7 @@ $result = mysqli_query($connection, $query_string);
 $num_rows = mysqli_num_rows($result);
 $items = mysqli_fetch_assoc($result);
 
-print "
+/*print "
 <script type=\"text/javascript\">
 function check_quantity(quantity)
 {
@@ -36,7 +36,7 @@ function check_quantity(quantity)
 	 return true;
 }
 
-/*
+
 * function check_inStock(p_inStock) {
  if (parseInt(p_inStock) < 1) {
   alert(\"Not enough products left!\");
@@ -66,9 +66,10 @@ function validateNumber(numberStr, min, max) {
 }
 * 
 * 
-* */
+*
 </script>
-
+*/
+print "
 <!-- title...-->
 <H1>Product Detail</H1>";
 if ($num_rows > 0 ) {
@@ -97,8 +98,8 @@ if ($num_rows > 0 ) {
     print "<br>
 <table border='0'>
 <tr>
-<form  onsubmit='return check_quantity(700)'><!--method='post' name='addFrom' target=this-->
-<td><input type='text' size='3'></td>
+<form name='addForm' action='../product-detail/addToCart.php?product_id=".$product_id."' method='post' target='_blank'><!--method='post' name='addFrom' target=this onsubmit='return check_quantity(700)'-->
+<td><input type='number' size='1' max='".$items["in_stock"]."' name='selected_quantity'></td>
 <td>"."/ ".$items["in_stock"]." available"."</td>
 </tr>
 
