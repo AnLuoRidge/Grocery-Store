@@ -99,7 +99,7 @@ if ($num_rows > 0 ) {
 <table border='0'>
 <tr>
 <form name='addForm' action='../product-detail/addToCart.php?product_id=".$product_id."' method='post' target='_blank'><!--method='post' name='addFrom' target=this onsubmit='return check_quantity(700)'-->
-<td><input type='number' size='1' max='".$items["in_stock"]."' name='selected_quantity'></td>
+<td><input type='number' size='1' max='".$items["in_stock"]."' min='1' name='selected_quantity'></td>
 <td>"."/ ".$items["in_stock"]." available"."</td>
 </tr>
 
