@@ -6,32 +6,14 @@
  * Time: 21:40
  */
 
-session_destroy();
-echo "clearing";
-print "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
-<title>Shopping cart</title>
+// MUST start before destroy
+session_start();
+session_unset();
 
-<script language=\"javascript\">
-function checkout(ToCheckIt)
-{
-	if (ToCheckIt == 0  || !(ToCheckIt))
-	{
-               window.alert(\"Your shopping cart is empty, please select something!\");
-
-                return false;
-                
-	}
-	else
-	{ 
-		return true;
-
-	}
-}
-
-
-</script>
-
+print "
+<html>
+<head>
+<title>Shopping Cart</title>
 <style>
 
 
@@ -110,15 +92,43 @@ ht:bold;
 
 
 </style>
-
-<script type=\"text/javascript\" async=\"\" src=\"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js\"></script></head>
-
+</head>
 <body background=\"pics/website_background.jpg\" bgproperties=\"fixed\">
 <center>
-<img src=\"utslogo.gif\">
-<form action=\"/~jinsonz/ip/ass-1/add.php\" method=\"post\" target=\"bottom_right\">
-<table width=\"90%\"><tbody><tr><td><b>Del</b></td><td><b>Product name</b></td><td><b>Unit price</b></td><td><b>Unit quantity</b></td><td><b>Required quantity</b></td><td><b>Total cost</b></td></tr></tbody></table><table style=\"background-color: transparent; border-spacing: 0; padding: 0; \" border=\"0\"><tbody><tr><td><input type=\"submit\" name=\"clear\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\"></td><td><input type=\"submit\" value=\"Delete\" onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td><td><form action=\"checkout.php\" method=\"post\" target=\"top_right\"><input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout()\"></form></td></tr>
-</tbody></table>
-</form></center>
+<table width=\"90%\"><tbody><tr><td><b>Del</b></td><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
+";
 
- </body></html>";
+$total_quantity = 0;
+$total_price = 0;
+
+print "<tr>
+<td colspan=\"3\">Number of products</td>
+<td align=\"left\" colspan=\"3\">".$total_quantity."</td>
+</tr><tr>
+<td colspan=\"3\">Total</td>
+<td align=\"left\" colspan=\"3\">$".$total_price."</td>
+</tr>
+</tbody>
+</table>
+
+<table style=\"background-color: transparent; border-spacing: 0; padding: 0; \" border=\"0\">
+<tbody>
+<tr>
+<td>
+<form action='../shopping-cart/clear.php' method=\"post\" target=\"top_right\">
+<input type=\"submit\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\">
+</form>
+</td>
+<td><input type=\"submit\" value=\"Delete\" onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
+<td>
+<form action=\"checkout.php\" method=\"post\" target=\"top_right\">
+<input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\"><
+/form>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</body>
+</html>
+";
