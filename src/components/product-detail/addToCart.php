@@ -155,14 +155,15 @@ ht:bold;
 <body background=\"pics/website_background.jpg\" bgproperties=\"fixed\">
 <center>
 <table width=\"90%\"><tbody><tr><td><b>Del</b></td><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
+<form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='_blank' method='post'>
 ";
 
 $total_quantity = 0;
 $total_price = 0;
 
-foreach ($_SESSION["cart"] as $item) {
-    print "  
-<tr><td><input type=\"checkbox\" name=\"delete[]\" value=\"0\"></td>
+foreach ($_SESSION["cart"] as $product_id => $item) {
+    print "  <!--name array in input. get key of array.-->
+<tr><td><input type='checkbox' name='delete[]' value=".$product_id."></td>
 <td>".$item["product_name"]."</td>
 <td>".$item["product_unit_quantity"]."</td>
 <td>".$item["product_unit_price"]."</td>
@@ -173,7 +174,9 @@ foreach ($_SESSION["cart"] as $item) {
     $total_price += $item["total_price"];
 }
 
-print "<tr>
+print "
+</form>
+<tr>
 <td colspan=\"3\">Number of products</td>
 <td align=\"left\" colspan=\"3\">".$total_quantity."</td>
 </tr><tr>
@@ -191,12 +194,13 @@ print "<tr>
 <input type=\"submit\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\">
 </form>
 </td>
-<td><input type=\"submit\" value=\"Delete\" onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
 <td>
 <form action=\"checkout.php\" method=\"post\" target=\"top_right\">
-<input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\"><
-/form>
+<input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\">
+</form>
 </td>
+<td><input type=\"submit\" value=\"Delete\" form='selectedProducts' onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
+<td>
 </tr>
 </tbody>
 </table>
@@ -204,5 +208,4 @@ print "<tr>
 </body>
 </html>
 ";
-print_r($_SESSION["cart"]);
 
