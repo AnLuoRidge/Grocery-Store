@@ -66,7 +66,7 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 //$headers .= 'From: <webmaster@example.com>' . "\r\n";
 //$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-mail($to,$subject,$message,$headers);
+mail($to, $subject, $message, $headers);
 ?>
 	</body>
 </html>

@@ -12,7 +12,7 @@
     <frame src="product-category/navi.html" name="leftFrame">
     <frameset rows="50%,*" >
 <!--Add product details page to the source here-->
-        <frame src="form/Form.php" name="topRightFrame">
+        <frame src="checkout/Form.php" name="topRightFrame">
 <!--Add shopping cart page to the source here-->
         <frame src="" name="bottomRightFrame">
 

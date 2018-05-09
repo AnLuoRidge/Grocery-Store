@@ -22,8 +22,8 @@ print "
 
 
 table  {
-	background: #99f;
-	color:#fff;
+	background: #FFEBA9;
+	color:#000;
 	text-align:left;
 	font-size:12px;
 	border-spacing: 4px;
@@ -74,16 +74,9 @@ table caption {
 table, td, th {
 	margin:0px;
 	padding:3px;
-	border-left:1px solid #ddf;
-	border-right:1px solid #669;
-	border-bottom:1px solid #669;
+
 }
-td, th {
-	border-top:1px solid #ddf;
-	border-left:1px solid #ddf;
-	border-right:1px solid #669;
-	border-bottom:1px solid #669;
-}
+
 tr.odd {
 	color: inherit;
 	background: #88e;
@@ -135,7 +128,7 @@ print "
 <tbody>
 <tr>
 <td>
-<form action='../shopping-cart/clear.php' method=\"post\" target=\"top_right\">
+<form action='../shopping-cart/clearCart.php' method=\"post\" target=\"top_right\">
 <input type=\"submit\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\">
 </form>
 </td>
