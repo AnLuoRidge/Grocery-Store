@@ -111,23 +111,6 @@ print "<tr>
 </tbody>
 </table>
 
-<table style=\"background-color: transparent; border-spacing: 0; padding: 0; \" border=\"0\">
-<tbody>
-<tr>
-<td>
-<form action='../shopping-cart/clear.php' method=\"post\" target=\"top_right\">
-<input type=\"submit\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\">
-</form>
-</td>
-<td><input type=\"submit\" value=\"Delete\" onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
-<td>
-<form action=\"checkout.php\" method=\"post\" target=\"top_right\">
-<input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\"><
-/form>
-</td>
-</tr>
-</tbody>
-</table>
 </center>
 </body>
 </html>
