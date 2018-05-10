@@ -2,7 +2,7 @@ table  {
     background: #FFEBA9;
     color:#000;
     text-align:left;
-    font-size:12px;
+    font-size: 14px;
     border-spacing: 4px;
     border-left:3px solid #567;
     border-right:3px solid #000;
@@ -44,7 +44,7 @@ table caption {
     color: #ccf;
     background: #99f;
     font-family: georgia, "times new roman", serif;
-    font-size:20px;
+    font-size: 20px;
     font-weight:bold;
 }
 table, td, th {
