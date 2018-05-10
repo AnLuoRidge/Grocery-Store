@@ -14,9 +14,51 @@ session_start();
 
 <head>
     <title>Delivery form</title>
+<!--    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">-->
 </head>
 <body>
-<h1 style="color: red">TODO: Show order!</h1>
+
+<!-- order info -->
+
+<center>
+    <h1>Order Preview</h1>
+    <table width=\"90%\"><tbody><tr><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
+        <form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='cartFrame' method='post'>
+
+<?php
+            $total_quantity = 0;
+            $total_price = 0;
+
+            foreach ($_SESSION["cart"] as $product_id => $item) {
+            print "  <!--name array in input. get key of array.-->
+            <tr>
+                <td>" . $item["product_name"] . "</td>
+                <td>" . $item["product_unit_quantity"] . "</td>
+                <td>$" . $item["product_unit_price"] . "</td>
+                <td>" . $item["selected_quantity"] . "</td>
+                <td>$" . $item["total_price"] . "</td>
+            </tr>";
+            $total_quantity += $item["selected_quantity"];
+            $total_price += $item["total_price"];
+            }
+            ?>
+
+        </form>
+        <tr>
+            <td colspan="3">Number of products</td>
+            <td align="left" colspan="3" id="num of products"><?php echo $total_quantity ?></td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td align="left" colspan="3">$<?php echo $total_price ?></td>
+        </tr>
+        </tbody>
+    </table>
+
+<!-- end of order -->
+
+    <br/>
+    <br/>
 <label style="font-family: Arial;font-size: xx-large;">Please enter your details for delivery!</label>
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
