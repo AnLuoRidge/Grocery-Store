@@ -120,7 +120,7 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
             </form>
         </td>
         <td>
-            <form action='../checkout/Form.php' method="post" target='top_right'>
+            <form action='../checkout/Form.php' method="post" target='_blank'>
                 <input type="submit" name="submit" value="Proceed to checkout" onclick="return checkout(1)">
             </form>
         </td>

@@ -295,7 +295,7 @@
         </tr></td>
 
         <tr><td>
-                <input type= "submit" name="Confirm" value ="submit" ></tr></td>
+                <input type= "submit" name="Confirm" value ="Purchase" ></tr></td>
     </table>
 </form>
 <script type="text/javascript">

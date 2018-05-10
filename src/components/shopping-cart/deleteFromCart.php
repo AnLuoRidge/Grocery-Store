@@ -63,7 +63,7 @@ print "
 </form>
 </td>
 <td>
-<form action=''../checkout/Form.php' method=\"post\" target='_top'>
+<form action=''../checkout/Form.php' method=\"post\" target='_blank'>
 <input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\">
 </form>
 </td>
