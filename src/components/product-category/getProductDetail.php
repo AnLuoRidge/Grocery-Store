@@ -70,8 +70,8 @@ function validateNumber(numberStr, min, max) {
 </script>
 */
 print "
-<!-- title...-->
 <H1>Product Detail</H1>";
+
 if ($num_rows > 0 ) {
     print "<table border='0'>";
 
@@ -98,8 +98,8 @@ if ($num_rows > 0 ) {
     print "<br>
 <table border='0'>
 <tr>
-<form name='addForm' action='../product-detail/addToCart.php?product_id=".$product_id."' method='post' target='bottomRightFrame'>
-<td><input type='number' size='1' max='".$items["in_stock"]."' min='1' name='selected_quantity' required></td>
+<form name='addForm' action='../product-detail/addToCart.php?product_id=".$product_id."' method='post' target='cartFrame'>
+<td><input type='number' size='1' max='".$items["in_stock"]."' min='1' name='selected_quantity' value='1' required></td>
 <td>"."/ ".$items["in_stock"]." available"."</td>
 </tr>
 

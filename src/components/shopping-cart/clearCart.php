@@ -87,6 +87,7 @@ ht:bold;
 </style>
 </head>
 <body background=\"pics/website_background.jpg\" bgproperties=\"fixed\">
+<h3>Your cart is empty.</h3>
 <center>
 <table width=\"90%\"><tbody><tr><td><b>Del</b></td><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
 ";

@@ -148,7 +148,7 @@ ht:bold;
 <body background=\"pics/website_background.jpg\" bgproperties=\"fixed\">
 <center>
 <table width=\"90%\"><tbody><tr><td><b>Del</b></td><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
-<form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='top_right' method='post'>
+<form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='cartFrame' method='post'>
 ";
 
 $total_quantity = 0;
@@ -159,7 +159,7 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
 <tr><td><input type='checkbox' name='delete[]' value=".$product_id."></td>
 <td>".$item["product_name"]."</td>
 <td>".$item["product_unit_quantity"]."</td>
-<td>".$item["product_unit_price"]."</td>
+<td>$".$item["product_unit_price"]."</td>
 <td>".$item["selected_quantity"]."</td>
 <td>$".$item["total_price"]."</td>
 </tr>";
@@ -183,13 +183,13 @@ print "
 <tbody>
 <tr>
 <td>
-<form action='../shopping-cart/clearCart.php' method=\"post\" target=\"top_right\">
+<form action='../shopping-cart/clearCart.php' method=\"post\" target='cartFrame'>
 <input type=\"submit\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\">
 </form>
 </td>
 <td>
 <form action='../checkout/Form.php' method=\"post\" target='top_right'>
-<input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\">
+<input type=\"submit\" name=\"submit\" value=\"Proceed to checkout\" onclick=\"return checkout(1)\">
 </form>
 </td>
 <td><input type=\"submit\" value=\"Delete\" form='selectedProducts' onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
