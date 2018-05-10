@@ -100,11 +100,11 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
 
 </form>
 <tr>
-    <td colspan="3">Number of products</td>
+    <td colspan="3" style="font-weight: bold">Number of products</td>
     <td align="left" colspan="3" id="num of products"><?php echo $total_quantity ?></td>
 </tr>
 <tr>
-    <td colspan="3">Total</td>
+    <td colspan="3" style="font-weight: bold">Total</td>
     <td align="left" colspan="3">$<?php echo $total_price ?></td>
 </tr>
 </tbody>

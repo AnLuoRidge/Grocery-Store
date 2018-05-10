@@ -5,40 +5,38 @@
     <title>Cart</title>
     <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css"/>
 </head>
-<div>
-    <h3>Your cart is empty.</h3>
-</div>
-<div>
-    <center>
-        <table width=\"90%\">
-            <tbody>
-            <tr>
-                <td><b>Del</b></td>
-                <td><b>Product name</b></td>
-                <td><b>Unit quantity</b></td>
-                <td><b>Unit price</b></td>
-                <td><b>Required quantity</b></td>
-                <td><b>Subtotal</b></td>
-            </tr>
-
-            <td colspan=\"3\" style="font-weight: bold">Number of products</td>
-            <td align=\"left\" colspan=\"3\" id="num of products">0</td>
-            </tr>
-            <tr>
-                <td colspan=\"3\" style="font-weight: bold">Total</td>
-                <td align=\"left\" colspan=\"3\">$0</td>
-            </tr>
-            </tbody>
-        </table>
-        <table style="background-color: transparent; border-spacing: 0; padding: 0; " border="0">
-            <tbody>
-            <tr>
-                <td>
-                    <input type="submit" value="Clear"
-                           onclick="{return confirm('Do you want to clear your shopping cart?')}">
-                </td>
-                <td>
-                    <input type="submit" name="submit" value="Proceed to checkout" onclick="
+<body>
+<center>
+    <table width=\"90%\">
+        <tbody>
+        <tr>
+            <td><b>Del</b></td>
+            <td><b>Product name</b></td>
+            <td><b>Unit quantity</b></td>
+            <td><b>Unit price</b></td>
+            <td><b>Required quantity</b></td>
+            <td><b>Subtotal</b></td>
+        </tr>
+        <tr><td>Your cart is empty.</td></tr>
+<tr>
+        <td colspan=\"3\" style="font-weight: bold">Number of products</td>
+        <td align=\"left\" colspan=\"3\" id="num of products">0</td>
+        </tr>
+        <tr>
+            <td colspan=\"3\" style="font-weight: bold">Total</td>
+            <td align=\"left\" colspan=\"3\">$0</td>
+        </tr>
+        </tbody>
+    </table>
+    <table style="background-color: transparent; border-spacing: 0; padding: 0; " border="0">
+        <tbody>
+        <tr>
+            <td>
+                <input type="submit" value="Clear"
+                       onclick="{return confirm('Do you want to clear your shopping cart?')}">
+            </td>
+            <td>
+                <input type="submit" name="submit" value="Proceed to checkout" onclick="
                 const quantity = Number(document.getElementById('num of products').innerHTML);
                 if (quantity > 0) {
                     return true;
@@ -46,16 +44,15 @@
                     alert('No products');
                     return false;
                 }">
-                </td>
-                <td>
-                    <input type="submit" value="Delete"
-                           onclick="{alert('No products!'); return false;}">
-                </td>
-                <td>
-            </tr>
-            </tbody>
-        </table>
-    </center>
-</div>
+            </td>
+            <td>
+                <input type="submit" value="Delete"
+                       onclick="{alert('No products!'); return false;}">
+            </td>
+            <td>
+        </tr>
+        </tbody>
+    </table>
+</center>
 </body>
 </html>

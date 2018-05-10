@@ -1,13 +1,11 @@
 table  {
     background: #FFEBA9;
-    color:#000;
     text-align:left;
     font-size: 14px;
     border-spacing: 4px;
-    border-left:3px solid #567;
-    border-right:3px solid #000;
     padding: 3px;
 }
+
 table a, table, tbody, tfoot, tr, th, td {
     font-family: Verdana, arial, helvetica, sans-serif;
 }
@@ -18,14 +16,17 @@ table a {
     color: #ccf;
     font-weight: bold;
 }
+
 table a:link {
     text-decoration: none;
 }
+
 table a:visited {
     background: inherit;
     color: #66c;
     text-decoration: line-through;
 }
+
 table a:hover {
     background: inherit;
     color: #eef;
@@ -34,6 +35,7 @@ table a:hover {
     left: 1px;
     text-decoration: none;
 }
+
 table caption {
     border-top:1px solid #ddf;
     border-left:1px solid #ddf;
@@ -47,6 +49,7 @@ table caption {
     font-size: 20px;
     font-weight:bold;
 }
+
 table, td, th {
     margin:0px;
     padding:3px;

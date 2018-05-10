@@ -16,13 +16,13 @@
             <td><b>Required quantity</b></td>
             <td><b>Subtotal</b></td>
         </tr>
-
+        <tr><td>Your cart is empty.</td></tr>
         <tr>
-            <td colspan=\"3\">Number of products</td>
+            <td colspan=\"3\" style="font-weight: bold">Number of products</td>
             <td align=\"left\" colspan=\"3\">0</td>
         </tr>
         <tr>
-            <td colspan=\"3\">Total</td>
+            <td colspan=\"3\" style="font-weight: bold">Total</td>
             <td align=\"left\" colspan=\"3\">$0</td>
         </tr>
         </tbody>

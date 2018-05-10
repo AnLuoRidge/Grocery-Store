@@ -42,13 +42,17 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
     $total_price += $item["total_price"];
 }
 
+if (count($_SESSION["cart"]) == 0) {
+    echo "<tr><td>Your cart is empty.</td></tr>";
+}
+
 print "
 </form>
 <tr>
-<td colspan=\"3\">Number of products</td>
+<td colspan=\"3\" style=\"font-weight: bold\">Number of products</td>
 <td align=\"left\" colspan=\"3\" id=\"num of products\">" . $total_quantity . "</td>
 </tr><tr>
-<td colspan=\"3\">Total</td>
+<td colspan=\"3\" style=\"font-weight: bold\">Total</td>
 <td align=\"left\" colspan=\"3\">$" . $total_price . "</td>
 </tr>
 </tbody>
