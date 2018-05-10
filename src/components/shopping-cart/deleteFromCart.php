@@ -59,7 +59,7 @@ print "
 <tr>
 <td>
 <form action='../shopping-cart/clearCart.php' method=\"post\" target=cartFrame>
-<input type=\"submit\" value=\"Clear\" onclick=\"{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}\">
+<input type=\"submit\" value=\"Clear\" onclick=\"{return confirm('Do you want to clear your shopping cart?')}\">
 </form>
 </td>
 <td>
@@ -74,7 +74,11 @@ print "
                 }\">
                 </form>
 </td>
-<td><input type=\"submit\" value=\"Delete\" form='selectedProducts' onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
+<td>
+<form> <!-- if no form tag, delete button will be lower than others -->
+<input type=\"submit\" value=\"Delete\" form='selectedProducts' onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\">
+</form>
+</td>
 <td>
 </tr>
 </tbody>

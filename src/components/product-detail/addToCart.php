@@ -109,14 +109,14 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
 </tr>
 </tbody>
 </table>
-
+<center>
 <table style="background-color: transparent; border-spacing: 0; padding: 0; " border="0">
     <tbody>
     <tr>
         <td>
             <form action='../shopping-cart/clearCart.php' method="post" target='cartFrame'>
                 <input type="submit" value="Clear"
-                       onclick="{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}">
+                       onclick="{return confirm('Do you want to clear your shopping cart?')}">
             </form>
         </td>
         <td>
@@ -131,10 +131,12 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
                 }">
             </form>
         </td>
-        <td><input type="submit" value="Delete" form='selectedProducts'
-                   onclick="{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}">
-        </td>
         <td>
+            <form> <!-- if no form tag, delete button will be lower than others -->
+            <input type="submit" value="Delete" form='selectedProducts'
+                   onclick="{return confirm('Do you want to delete the selected items?')}">
+            </form>
+        </td>
     </tr>
     </tbody>
 </table>

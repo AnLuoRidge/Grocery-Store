@@ -1,9 +1,9 @@
 <html>
 <head>
     <title>Shopping Cart</title>
-    <link href='../shopping-cart/cart.css' rel=\"stylesheet\" type=\"text/css\"/>
+    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">
 </head>
-<body background=\"pics/website_background.jpg\" bgproperties=\"fixed\">
+<body>
 <h3>Your cart is empty.</h3>
 <center>
     <table width=\"90%\">
@@ -16,7 +16,6 @@
             <td><b>Required quantity</b></td>
             <td><b>Subtotal</b></td>
         </tr>
-
 
         <tr>
             <td colspan=\"3\">Number of products</td>
@@ -33,16 +32,14 @@
         <tbody>
         <tr>
             <td>
-                <form action='../shopping-cart/clearCart.php' method="post" target='cartFrame'>
-                    <input type="submit" value="Clear"
-                           onclick="{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}">
-                </form>
+                <input type="submit" value="Clear"
+                           onclick="{return confirm('Do you want to clear your shopping cart?')}">
             </td>
             <td>
                 <input type="submit" name="submit" value="Proceed to checkout" onclick="{alert('No products!');}">
             </td>
             <td>
-                <button onclick="{alert('No products!');}">Delete</button>
+                <input type="submit" name="submit" value="Delete" onclick="{alert('No products!');}">
             </td>
             <td>
         </tr>
