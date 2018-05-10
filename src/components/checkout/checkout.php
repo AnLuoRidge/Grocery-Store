@@ -1,20 +1,26 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: shuaichen
+ * Date: 6/5/18
+ * Time: 10:54
+ */
+
+session_start();
+?>
+
 <html>
 
-<!--/**-->
-<!--* Created by PhpStorm.-->
-<!--* User: shuaichen-->
-<!--* Date: 6/5/18-->
-<!--* Time: 10:54-->
-<!--*/-->
+
 <head>
     <title>Delivery form</title>
 </head>
 <body>
-
+<h1 style="color: red">TODO: Show order!</h1>
 <label style="font-family: Arial;font-size: xx-large;">Please enter your details for delivery!</label>
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
-<form name="purchaseForm" method="POST" action="Form_submitted.php">
+<form name="purchaseForm" method="POST" action="purchase.php">
     <table style="font-family: Arial;">
         <tr>
             <td>First Name: <span style="color:#FF0000">*</span></td>
@@ -317,5 +323,4 @@
 
 </html>
 
-<?php session_start();
-session_destroy() ?>
+<?php session_destroy(); ?>

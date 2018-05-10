@@ -63,7 +63,7 @@ print "
 </form>
 </td>
 <td>
-<form action='../checkout/Form.php' method=\"post\" target='_blank'>
+<form action='../checkout/checkout.php' method=\"post\" target='_blank'>
                 <input type=\"submit\" name=\"submit\" value=\"Proceed to checkout\" onclick=\"
                 const quantity = Number(document.getElementById('num of products').innerHTML);
                 if (quantity > 0) {
