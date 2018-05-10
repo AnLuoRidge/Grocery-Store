@@ -28,7 +28,26 @@
         </tr>
         </tbody>
     </table>
-
+    <!-- disable or hidden the following buttons maybe a better way -->
+    <table style="background-color: transparent; border-spacing: 0; padding: 0; " border="0">
+        <tbody>
+        <tr>
+            <td>
+                <form action='../shopping-cart/clearCart.php' method="post" target='cartFrame'>
+                    <input type="submit" value="Clear"
+                           onclick="{if(confirm('Do you want to clear your shopping cart?')) {return true;} return false;}">
+                </form>
+            </td>
+            <td>
+                <input type="submit" name="submit" value="Proceed to checkout" onclick="{alert('No products!');}">
+            </td>
+            <td>
+                <button onclick="{alert('No products!');}">Delete</button>
+            </td>
+            <td>
+        </tr>
+        </tbody>
+    </table>
 </center>
 </body>
 </html>

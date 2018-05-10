@@ -301,10 +301,10 @@
 <script type="text/javascript">
     function validate()
     {
-        var emailAdd = document.getElementById("email").value;
+        const emailAdd = document.getElementById("email").value;
         // console.log(emailAdd);
         // alert(emailAdd);
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (!emailAdd.match(mailformat))
         {
             alert("Invalid email address!");

@@ -101,7 +101,7 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
 </form>
 <tr>
     <td colspan="3">Number of products</td>
-    <td align="left" colspan="3"><?php echo $total_quantity ?></td>
+    <td align="left" colspan="3" id="num of products"><?php echo $total_quantity ?></td>
 </tr>
 <tr>
     <td colspan="3">Total</td>
@@ -120,8 +120,15 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
             </form>
         </td>
         <td>
-            <form action='../checkout/Form.php' method="post" target='_blank'>
-                <input type="submit" name="submit" value="Proceed to checkout" onclick="return checkout(1)">
+            <form action='../checkout/Form.php' method="post" target='top_right'>
+                <input type="submit" name="submit" value="Proceed to checkout" onclick="
+                const quantity = Number(document.getElementById('num of products').innerHTML);
+                if quantity > 0 {
+                    return true;
+                } else {
+                    alert('No products');
+                    return false;
+                }">
             </form>
         </td>
         <td><input type="submit" value="Delete" form='selectedProducts'

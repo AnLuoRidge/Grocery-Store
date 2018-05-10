@@ -46,7 +46,7 @@ print "
 </form>
 <tr>
 <td colspan=\"3\">Number of products</td>
-<td align=\"left\" colspan=\"3\">" . $total_quantity . "</td>
+<td align=\"left\" colspan=\"3\" id=\"num of products\">" . $total_quantity . "</td>
 </tr><tr>
 <td colspan=\"3\">Total</td>
 <td align=\"left\" colspan=\"3\">$" . $total_price . "</td>
@@ -63,9 +63,16 @@ print "
 </form>
 </td>
 <td>
-<form action=''../checkout/Form.php' method=\"post\" target='_blank'>
-<input type=\"submit\" name=\"submit\" value=\"Checkout\" onclick=\"return checkout(1)\">
-</form>
+<form action='../checkout/Form.php' method=\"post\" target='_blank'>
+                <input type=\"submit\" name=\"submit\" value=\"Proceed to checkout\" onclick=\"
+                const quantity = Number(document.getElementById('num of products').innerHTML);
+                if (quantity > 0) {
+                    return true;
+                } else {
+                    alert('No products');
+                    return false;
+                }\">
+                </form>
 </td>
 <td><input type=\"submit\" value=\"Delete\" form='selectedProducts' onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\"></td>
 <td>
