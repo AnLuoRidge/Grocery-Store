@@ -18,8 +18,8 @@ print "
 
 
 table  {
-	background: #99f;
-	color:#fff;
+	background: #FFEBA9;
+	color:#000;
 	text-align:left;
 	font-size:12px;
 	border-spacing: 4px;
@@ -70,16 +70,9 @@ table caption {
 table, td, th {
 	margin:0px;
 	padding:3px;
-	border-left:1px solid #ddf;
-	border-right:1px solid #669;
-	border-bottom:1px solid #669;
+
 }
-td, th {
-	border-top:1px solid #ddf;
-	border-left:1px solid #ddf;
-	border-right:1px solid #669;
-	border-bottom:1px solid #669;
-}
+
 tr.odd {
 	color: inherit;
 	background: #88e;

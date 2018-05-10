@@ -291,7 +291,10 @@
 
         nodeEnter.append("circle")
             .attr("r", 1e-6)
-            .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+            .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+            .append("a")
+            .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.id; }) // ALL nodes are clickable
+        // add  click func for opening the link
 
         nodeEnter.append("text")
             .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
@@ -370,6 +373,19 @@
     }
 
 </script>
+<div>
+<a href="http://www-student.it.uts.edu.au/~xinyding/Grocery-Store/src/components/product-category/getProductDetail.php?product_id=1002" target="topRightFrame">1002</a>
+<a href="http://www-student.it.uts.edu.au/~xinyding/Grocery-Store/src/components/product-category/getProductDetail.php?product_id=2000" target="topRightFrame">2000</a>
+<a href="http://www-student.it.uts.edu.au/~xinyding/Grocery-Store/src/components/product-category/getProductDetail.php?product_id=2001" target="topRightFrame">2001</a>
+<a href="http://www-student.it.uts.edu.au/~xinyding/Grocery-Store/src/components/product-category/getProductDetail.php?product_id=2002" target="topRightFrame">2002</a>
+<button onclick="location.href='http://www-student.it.uts.edu.au/~xinyding/Grocery-Store/src/components/product-category/getProductDetail.php?product_id=2003'" type="button">
+    2003</button>
+</div>
+<p id="date" style="color: grey">Last Updated: </p>
 
+<script>
+    var d = new Date();
+    document.getElementById("date").innerHTML = d;
+</script>
 </body>
 </html>
