@@ -120,10 +120,10 @@ foreach ($_SESSION["cart"] as $product_id => $item) {
             </form>
         </td>
         <td>
-            <form action='../checkout/Form.php' method="post" target='top_right'>
+            <form id="checkout" action='../checkout/Form.php' method="post" target='_blank'>
                 <input type="submit" name="submit" value="Proceed to checkout" onclick="
                 const quantity = Number(document.getElementById('num of products').innerHTML);
-                if quantity > 0 {
+                if (quantity > 0) {
                     return true;
                 } else {
                     alert('No products');
