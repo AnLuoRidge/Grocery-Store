@@ -1,4 +1,3 @@
-
 <html>
 
 <!--/**-->
@@ -11,38 +10,39 @@
     <title>Delivery form</title>
 </head>
 <body>
-<?php
-//    $emailAdd ="";
-//    $emailErr="";
-//    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-//    $emailAdd=$_POST['email'];
-//        if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$emailAdd)) {
-//            $emailErr = "Invalid email address!";
-//        }
-//    }
-//    $email = test_input($_POST["email"]);
-//    if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email))
-//    {
-//        $emailErr = "Invalid email address!";
-//    }
-?>
+
 <label style="font-family: Arial;font-size: xx-large;">Please enter your details for delivery!</label>
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
-<form name="purchaseForm" method="POST" action="Form_submitted.php" onsubmit="return validate();" >
+<form name="purchaseForm" method="POST" action="Form_submitted.php">
     <table style="font-family: Arial;">
         <tr>
             <td>First Name: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tFName" id="tFName" required></tr></td>
-        <tr><td>Last Name: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name = "tLName" id = "tLName"required></tr></td>
-        <tr><td>Address: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name = "tAddress"  id = "tAddress"required></tr></td>
-        <tr><td>Suburb: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name = "tSuburb" id = "tSuburb" required></tr></td>
-        <tr><td>State: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name = "tState" id = "tState" required></tr></td>
-        <tr><td>Country: <span style="color:#FF0000">*</span></td>
+            <td><input type="text" name="tFName" id="tFName" required>
+        </tr>
+        </td>
+        <tr>
+            <td>Last Name: <span style="color:#FF0000">*</span></td>
+            <td><input type="text" name="tLName" id="tLName" required>
+        </tr>
+        </td>
+        <tr>
+            <td>Address: <span style="color:#FF0000">*</span></td>
+            <td><input type="text" name="tAddress" id="tAddress" required>
+        </tr>
+        </td>
+        <tr>
+            <td>Suburb: <span style="color:#FF0000">*</span></td>
+            <td><input type="text" name="tSuburb" id="tSuburb" required>
+        </tr>
+        </td>
+        <tr>
+            <td>State: <span style="color:#FF0000">*</span></td>
+            <td><input type="text" name="tState" id="tState" required>
+        </tr>
+        </td>
+        <tr>
+            <td>Country: <span style="color:#FF0000">*</span></td>
             <td>
                 <select name="countries" id="countries" required>
                     <option value="" selected="selected">Please select a country.</option>
@@ -157,7 +157,8 @@
                     <option value="Kazakhstan">Kazakhstan</option>
                     <option value="Kenya">Kenya</option>
                     <option value="Kiribati">Kiribati</option>
-                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of
+                    </option>
                     <option value="Korea, Republic of">Korea, Republic of</option>
                     <option value="Kuwait">Kuwait</option>
                     <option value="Kyrgyzstan">Kyrgyzstan</option>
@@ -171,7 +172,9 @@
                     <option value="Lithuania">Lithuania</option>
                     <option value="Luxembourg">Luxembourg</option>
                     <option value="Macao">Macao</option>
-                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic
+                        of
+                    </option>
                     <option value="Madagascar">Madagascar</option>
                     <option value="Malawi">Malawi</option>
                     <option value="Malaysia">Malaysia</option>
@@ -243,7 +246,9 @@
                     <option value="Solomon Islands">Solomon Islands</option>
                     <option value="Somalia">Somalia</option>
                     <option value="South Africa">South Africa</option>
-                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich
+                        Islands
+                    </option>
                     <option value="Spain">Spain</option>
                     <option value="Sri Lanka">Sri Lanka</option>
                     <option value="Sudan">Sudan</option>
@@ -287,36 +292,30 @@
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
 
-        </tr></td>
-        <tr><td>Post Code: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name = "tPCode" id = "tPCode" required></tr></td>
-        <tr><td>Email: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name = "email" id = "email"required>
-        </tr></td>
+        </tr>
+        </td>
+        <tr>
+            <td>Post Code: <span style="color:#FF0000">*</span></td>
+            <td><input type="text" name="tPCode" id="tPCode" required>
+        </tr>
+        </td>
+        <tr>
+            <td>Email: <span style="color:#FF0000">*</span></td>
+            <td><input type="email" name="email" id="email" required>
+        </tr>
+        </td>
 
-        <tr><td>
-                <input type= "submit" name="Confirm" value ="Purchase" ></tr></td>
+        <tr>
+            <td>
+                <input type="submit" name="Confirm" value="Purchase">
+        </tr>
+        </td>
     </table>
 </form>
-<script type="text/javascript">
-    function validate()
-    {
-        const emailAdd = document.getElementById("email").value;
-        // console.log(emailAdd);
-        // alert(emailAdd);
-        const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (!emailAdd.match(mailformat))
-        {
-            alert("Invalid email address!");
-            return false;
-        }
-
-        return true;
-    }
-</script>
 
 </body>
 
 </html>
 
-<?php session_start();session_destroy() ?>
+<?php session_start();
+session_destroy() ?>
