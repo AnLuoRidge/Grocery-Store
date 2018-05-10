@@ -9,7 +9,14 @@ $result = mysqli_query($connection, $query_string);
 $num_rows = mysqli_num_rows($result);
 $items = mysqli_fetch_assoc($result);
 
-print "
+print "<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>Product Detail</title>
+    <link href='../product-detail/product-detail.css' rel=\"stylesheet\" type=\"text/css\"/>
+</head>
+<body>
+
 <H1>Product Detail</H1>";
 
 if ($num_rows > 0) {
@@ -50,7 +57,9 @@ if ($num_rows > 0) {
 </td>
 </form>
 </tr>
-</table>";
+</table>
+</body>
+</html>";
 }
 
 mysqli_close($connection);
