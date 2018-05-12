@@ -31,7 +31,7 @@ td {
 .button {
     width: 136px;
     height: 40px;
-    color: rgba(255, 255, 255, 1);
+    color: black;
     background-color: #f0bc4c;
     border-radius: 9px;
     font-size: 20px;
