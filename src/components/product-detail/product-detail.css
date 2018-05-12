@@ -1,13 +1,13 @@
 .center {
     background-color:#ddd;
-    position: fixed;
     align-content: center;
     padding: 2em;
     left: 50%;
     top: 40%;
     width: 240px;
     height: 360px;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    /*transform: translate(-50%, -50%);*/
 }
 
 body {

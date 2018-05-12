@@ -1,51 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Shopping Cart</title>
-    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">
+    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h3>Your cart is empty.</h3>
-<center>
-    <table width=\"90%\">
-        <tbody>
-        <tr>
-            <td><b>Del</b></td>
-            <td><b>Product name</b></td>
-            <td><b>Unit quantity</b></td>
-            <td><b>Unit price</b></td>
-            <td><b>Required quantity</b></td>
-            <td><b>Subtotal</b></td>
-        </tr>
-        <tr><td>Your cart is empty.</td></tr>
-        <tr>
-            <td colspan=\"3\" style="font-weight: bold">Number of products</td>
-            <td align=\"left\" colspan=\"3\">0</td>
-        </tr>
-        <tr>
-            <td colspan=\"3\" style="font-weight: bold">Total</td>
-            <td align=\"left\" colspan=\"3\">$0</td>
-        </tr>
-        </tbody>
-    </table>
-    <!-- disable or hidden the following buttons maybe a better way -->
-    <table style="background-color: transparent; border-spacing: 0; padding: 0; " border="0">
-        <tbody>
-        <tr>
-            <td>
-                <input type="submit" value="Clear"
-                           onclick="{return confirm('Do you want to clear your shopping cart?')}">
-            </td>
-            <td>
-                <input type="submit" name="submit" value="Proceed to checkout" onclick="{alert('No products!');}">
-            </td>
-            <td>
-                <input type="submit" name="submit" value="Delete" onclick="{alert('No products!');}">
-            </td>
-            <td>
-        </tr>
-        </tbody>
-    </table>
-</center>
+<h1>My cart</h1>
+<table class="squeeze-table">
+    <tbody>
+    <tr>
+        <td class="underline" style="width:10px"><b>Del</b></td>
+        <td class="underline"><b>Product</b></td>
+        <td class="underline"><b>Price</b></td>
+        <td class="underline"><b>Quantity</b></td>
+        <td class="underline"><b>Total</b></td>
+    </tr>
+    <tr><td colspan="5" >Your cart is empty.</td></tr>
+    <tr style="visibility: hidden">
+        <td style="font-weight: bold">Number of products</td>
+        <td id="num of products">0</td>
+    </tr>
+
+    <tr>
+        <td colspan="4" class="topline"></td>
+        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$0</text></td>
+    </tr>
+    </tbody>
+</table>
+
+<input type="submit" value="Delete" class="black-button" style="margin-left: 5%"
+       onclick="{alert('No products!'); return false;}">
+
+<input type="submit" value="Clear" class="black-button"
+       onclick="{alert('No products!'); return false;}">
+
+<input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" onclick="{alert('No products!'); return false;}">
+
 </body>
 </html>
 

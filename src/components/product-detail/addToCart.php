@@ -82,7 +82,7 @@ if (!isset($_SESSION["cart"])) {
 <h1>My cart</h1>
 <table class="squeeze-table">
     <tbody>
-    <tr>
+    <tr style="margin-bottom: 1%;">
         <td class="underline" style="width:10px"><b>Del</b></td>
         <td class="underline"><b>Product</b></td>
         <td class="underline"><b>Price</b></td>
@@ -113,27 +113,24 @@ if (!isset($_SESSION["cart"])) {
         ?>
 
     </form>
-    <tr style="visibility: hidden">
-        <td style="font-weight: bold">Number of products</td>
-        <td id="num of products"><?php echo $total_quantity ?></td>
-    </tr>
 
-    <tr>
+    <tr style="margin-top: 1%;">
         <td colspan="4" class="topline"></td>
-        <td class="topline"><text style="font-weight: bold;">Subtotal: </text><text>$<?php echo $total_price ?></text></td>
+        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$<?php echo $total_price ?></text></td>
     </tr>
     </tbody>
 </table>
 
-
-<input type="submit" value="Delete" class="black-button" style="margin-left: 5%" form="addProduct"
+<form>
+<input type="submit" value="Delete" class="black-button" style="margin-left: 5%" form="selectedProducts"
        onclick="{return confirm('Do you want to delete the selected items?')}">
+</form>
 
 <form action='../shopping-cart/clearCart.php' method="post" target='cartFrame'>
-    <input type="submit" value="Clear"
-    <input type="submit" value="Clear" class="black-button"
+    <input type="submit" value="Clear" class="black-button" style="margin-left: 5%;"
            onclick="{return confirm('Do you want to clear your shopping cart?')}">
 </form>
+
 <form id="checkout" action='../checkout/checkout.php' method="post" target='_blank'>
     <input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" onclick="
                 const quantity = Number(document.getElementById('num of products').innerHTML);
@@ -145,6 +142,7 @@ if (!isset($_SESSION["cart"])) {
                 }">
 </form>
 
+    <text id="num of products" style="visibility: hidden"><?php echo $total_quantity ?></text>
 
 </body>
 </html>

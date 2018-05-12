@@ -24,27 +24,18 @@
 
         <tr>
             <td colspan="4" class="topline"></td>
-            <td class="topline"><text style="font-weight: bold;">Subtotal: </text><text>$0</text></td>
+            <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$0</text></td>
         </tr>
         </tbody>
     </table>
 
-    <input type="submit" value="Delete" class="black-button"
+    <input type="submit" value="Delete" class="black-button" style="margin-left: 5%"
            onclick="{alert('No products!'); return false;}">
 
     <input type="submit" value="Clear" class="black-button"
            onclick="{alert('No products!'); return false;}">
 
-    <input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" onclick="
-                const quantity = Number(document.getElementById('num of products').innerHTML);
-                if (quantity > 0) {
-                    return true;
-                } else {
-                    alert('No products!');
-                    return false;
-                }">
-
-
+    <input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" onclick="{alert('No products!'); return false;}">
 
 </body>
 </html>

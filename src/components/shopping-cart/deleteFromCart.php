@@ -11,83 +11,81 @@ session_start();
 foreach ($products_to_delete as $product_id) {
     unset($_SESSION["cart"][$product_id]);
 }
+?>
 
-
-// return Cart.html
-print "
-<html>
+<!--return cart.html-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Shopping Cart</title>
-<link href='../shopping-cart/cart.css' rel=\"stylesheet\" type=\"text/css\"/>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css"/>
 </head>
-<body background=\"pics/website_background.jpg\" bgproperties=\"fixed\">
-<center>
-<table width=\"90%\"><tbody><tr><td><b>Del</b></td><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
-<form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='cartFrame' method='post'>
-";
+<body>
+<h1>My cart</h1>
+<table class="squeeze-table">
+    <tbody>
+    <tr style="margin-bottom: 1%;">
+        <td class="underline" style="width:10px"><b>Del</b></td>
+        <td class="underline"><b>Product</b></td>
+        <td class="underline"><b>Price</b></td>
+        <td class="underline"><b>Quantity</b></td>
+        <td class="underline"><b>Total</b></td>
+    </tr>
+    <form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='cartFrame' method='post'>
 
-$total_quantity = 0;
-$total_price = 0;
+        <?php
+        $total_quantity = 0;
+        $total_price = 0;
 
-foreach ($_SESSION["cart"] as $product_id => $item) {
-    print "  <!--name array in input. get key of array.-->
-<tr><td><input type='checkbox' name='delete[]' value=" . $product_id . "></td>
-<td>" . $item["product_name"] . "</td>
-<td>" . $item["product_unit_quantity"] . "</td>
-<td>" . $item["product_unit_price"] . "</td>
-<td>" . $item["selected_quantity"] . "</td>
-<td>$" . $item["total_price"] . "</td>
+        foreach ($_SESSION["cart"] as $product_id => $item) {
+            print "  <!--name array in input. get key of array.-->
+        <tr><td><input type='checkbox' name='delete[]' value=" . $product_id . "></td>
+            <td>" . $item["product_name"] . "</td>
+            <td>$" . $item["product_unit_price"] . "</td>
+            <td>" . $item["selected_quantity"] . "</td>
+            <td>$" . $item["total_price"] . "</td>
+        </tr>
+        <tr>
+        <td></td>
+            <td style='color: grey'>" . $item["product_unit_quantity"] . "</td>
 </tr>";
-    $total_quantity += $item["selected_quantity"];
-    $total_price += $item["total_price"];
-}
+            $total_quantity += $item["selected_quantity"];
+            $total_price += $item["total_price"];
+        }
+        ?>
 
-if (count($_SESSION["cart"]) == 0) {
-    echo "<tr><td>Your cart is empty.</td></tr>";
-}
+    </form>
 
-print "
-</form>
-<tr>
-<td colspan=\"3\" style=\"font-weight: bold\">Number of products</td>
-<td align=\"left\" colspan=\"3\" id=\"num of products\">" . $total_quantity . "</td>
-</tr><tr>
-<td colspan=\"3\" style=\"font-weight: bold\">Total</td>
-<td align=\"left\" colspan=\"3\">$" . $total_price . "</td>
-</tr>
-</tbody>
+    <tr style="margin-top: 1%;">
+        <td colspan="4" class="topline"></td>
+        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$<?php echo $total_price ?></text></td>
+    </tr>
+    </tbody>
 </table>
 
-<table style=\"background-color: transparent; border-spacing: 0; padding: 0; \" border=\"0\">
-<tbody>
-<tr>
-<td>
-<form action='../shopping-cart/clearCart.php' method=\"post\" target=cartFrame>
-<input type=\"submit\" value=\"Clear\" onclick=\"{return confirm('Do you want to clear your shopping cart?')}\">
+<form>
+<input type="submit" value="Delete" class="black-button" style="margin-left: 5%" form="selectedProducts"
+       onclick="{return confirm('Do you want to delete the selected items?')}">
 </form>
-</td>
-<td>
-<form action='../checkout/checkout.php' method=\"post\" target='_blank'>
-                <input type=\"submit\" name=\"submit\" value=\"Proceed to checkout\" onclick=\"
+
+<form action='../shopping-cart/clearCart.php' method="post" target='cartFrame'>
+    <input type="submit" value="Clear" class="black-button" style="margin-left: 5%;"
+           onclick="{return confirm('Do you want to clear your shopping cart?')}">
+</form>
+
+<form id="checkout" action='../checkout/checkout.php' method="post" target='_blank'>
+    <input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" onclick="
                 const quantity = Number(document.getElementById('num of products').innerHTML);
                 if (quantity > 0) {
                     return true;
                 } else {
-                    alert('No products');
+                    alert('No products!');
                     return false;
-                }\">
-                </form>
-</td>
-<td>
-<form> <!-- if no form tag, delete button will be lower than others -->
-<input type=\"submit\" value=\"Delete\" form='selectedProducts' onclick=\"{if(confirm('Do you want to delete the selected items?')) {return true;} return false;}\">
+                }">
 </form>
-</td>
-<td>
-</tr>
-</tbody>
-</table>
-</center>
+
+    <text id="num of products" style="visibility: hidden"><?php echo $total_quantity ?></text>
+
 </body>
 </html>
-";
