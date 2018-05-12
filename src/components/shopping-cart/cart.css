@@ -71,6 +71,7 @@ tr.odd {
     background-color: #f0bc4c;
     border-radius: 9px;
     font-size: 20px;
+    font-weight: bold;
     position: absolute;
     right: 5%;
     /*margin-top: -10%;*/

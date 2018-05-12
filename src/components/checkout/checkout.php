@@ -62,7 +62,7 @@ session_start();
 
 
     <tr style="margin-top: 1%;">
-        <td colspan="4" class="topline"></td>
+        <td colspan="3" class="topline"></td>
         <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$<?php echo $total_price ?></text></td>
     </tr>
     </tbody>
@@ -73,7 +73,7 @@ session_start();
     <br/>
     <br/>
 
-<label style="font-family: Arial;font-size: xx-large;">Please enter your details for delivery!</label>
+<h2 style="font-family: Arial;">Please enter your details for delivery!</h2>
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
 <form name="purchaseForm" method="POST" action="purchase.php">
@@ -369,7 +369,7 @@ session_start();
 
         <tr >
             <td colspan="2">
-                <input type="submit" name="Confirm" value="Purchase" class="yellow-button" style="margin: 20px auto; position: relative;">
+                <input type="submit" name="Confirm" value="Purchase" class="yellow-button" style="margin-left: 40%; position: relative;">
         </tr>
         </td>
     </table>
