@@ -1,12 +1,11 @@
-table  {
-    background: #FFEBA9;
-    text-align:left;
-    font-size: 14px;
+table {
+    text-align: left;
+    font-size: 16px;
     border-spacing: 4px;
     padding: 3px;
 }
 
-table a, table, tbody, tfoot, tr, th, td {
+body {
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
@@ -37,22 +36,22 @@ table a:hover {
 }
 
 table caption {
-    border-top:1px solid #ddf;
-    border-left:1px solid #ddf;
-    border-right:1px solid #669;
-    border-bottom:1px solid #669;
+    border-top: 1px solid #ddf;
+    border-left: 1px solid #ddf;
+    border-right: 1px solid #669;
+    border-bottom: 1px solid #669;
     text-align: left;
     padding: 3px;
     color: #ccf;
     background: #99f;
     font-family: georgia, "times new roman", serif;
     font-size: 20px;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 table, td, th {
-    margin:0px;
-    padding:3px;
+    margin: 0px;
+    padding: 3px;
 
 }
 
@@ -61,3 +60,41 @@ tr.odd {
     background: #88e;
 }
 
+.underline {
+    border-bottom: 2px solid #000;
+}
+
+.topline {
+    border-top: 2px solid;
+    font-size: 18px;
+}
+
+.squeeze-table {
+    width: 90%;
+    border: 0px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: auto;
+}
+
+.yellow-button {
+    height: 40px;
+    color: white;
+    background-color: #f0bc4c;
+    border-radius: 9px;
+    font-size: 20px;
+    position: absolute;
+    right: 5%;
+    /*margin-top: -10%;*/
+    /*margin-left: 87%;*/
+}
+
+.black-button {
+    height: 40px;
+    left: 563px;
+    color: white;
+    background-color: black;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-left: 5%;
+}

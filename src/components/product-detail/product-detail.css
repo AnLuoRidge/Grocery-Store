@@ -1,3 +1,41 @@
-h1, table {
-    font-family: "arial";
+.center {
+    background-color:#ddd;
+    position: fixed;
+    align-content: center;
+    padding: 2em;
+    left: 50%;
+    top: 40%;
+    width: 240px;
+    height: 360px;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    font-family: Verdana, arial, helvetica, sans-serif;
+}
+
+.attributes {
+    font-weight: bold;
+}
+
+td {
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.qty {
+    font-size: 18px;
+    width: 30px;
+}
+
+.button {
+    width: 136px;
+    height: 40px;
+    color: rgba(255, 255, 255, 1);
+    background-color: #f0bc4c;
+    border-radius: 9px;
+    font-size: 20px;
+    margin-left: 22%;
+    position: absolute;
+    bottom: 10%;
 }
