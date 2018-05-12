@@ -121,18 +121,13 @@ if (!isset($_SESSION["cart"])) {
     </tbody>
 </table>
 
-<form>
 <input type="submit" value="Delete" class="black-button" style="margin-left: 5%" form="selectedProducts"
        onclick="{return confirm('Do you want to delete the selected items?')}">
-</form>
 
-<form action='../shopping-cart/clearCart.php' method="post" target='cartFrame'>
-    <input type="submit" value="Clear" class="black-button" style="margin-left: 5%;"
+<input type="submit" value="Clear" class="black-button" form="clearCart"
            onclick="{return confirm('Do you want to clear your shopping cart?')}">
-</form>
 
-<form id="checkout" action='../checkout/checkout.php' method="post" target='_blank'>
-    <input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" onclick="
+    <input type="submit" name="submit" value="Proceed to checkout" class="yellow-button" form="checkout" onclick="
                 const quantity = Number(document.getElementById('num of products').innerHTML);
                 if (quantity > 0) {
                     return true;
@@ -140,9 +135,10 @@ if (!isset($_SESSION["cart"])) {
                     alert('No products!');
                     return false;
                 }">
-</form>
 
-    <text id="num of products" style="visibility: hidden"><?php echo $total_quantity ?></text>
-
+<!-- invisible -->
+<text id="num of products" style="visibility: hidden"><?php echo $total_quantity ?></text>
+<form id="clearCart" action='../shopping-cart/clearCart.php' method="post" target='cartFrame'></form>
+<form id="checkout" action='../checkout/checkout.php' method="post" target='_blank'></form>
 </body>
 </html>
