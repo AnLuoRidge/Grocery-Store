@@ -10,22 +10,22 @@ $num_rows = mysqli_num_rows($result);
 $items = mysqli_fetch_assoc($result);
 ?>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo $items["product_name"] ?></title>
-    <link href='../product-detail/product-detail.css' rel="stylesheet" type="text/css">
-</head>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><?php echo $items["product_name"] ?></title>
+        <link href='../product-detail/product-detail.css' rel="stylesheet" type="text/css">
+    </head>
 <body>
 
-    <div class="center">
-<h1 style="margin-top: 0%;"><?php echo $items["product_name"] ?></h1>
+<div class="center">
+    <h1 style="margin-top: 0%;"><?php echo $items["product_name"] ?></h1>
 
 <?php
 //if ($num_rows > 0) {
-    print "<table border='0'>";
+print "<table border='0'>";
 
-    print "
+print "
 <tr>
 <td><text class='attributes'>Price: </text><text>" . "$" . $items["unit_price"] . "</text></td>
 
@@ -38,13 +38,15 @@ $items = mysqli_fetch_assoc($result);
 
 ";
 
-    print "</table>";
+print "</table>";
 
-    print "
-<form name='addProdcut' id='addProduct' action='../product-detail/addToCart.php?product_id=" . $product_id . "' method='post' target='cartFrame' style='font-size: 18px;margin-left: 14%;margin-top: 40%;'>
+print "<center>
+<form name='addProdcut' id='addProduct' action='../product-detail/addToCart.php?product_id=" . $product_id . "' method='post' target='cartFrame' style='font-size: 18px;margin-top: 40%;'>
 <input type='number' max='20' min='1' name='selected_quantity' value='1' required class='qty'>     /    " . $items["in_stock"] . " available" . "
 </form>
+
 <input type='submit' value='Add to cart' class='button' form='addProduct'>
+</center>
 </div>
 </body>
 </html>";

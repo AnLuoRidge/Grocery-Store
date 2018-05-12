@@ -14,56 +14,70 @@ session_start();
 
 <head>
     <title>Delivery form</title>
-<!--    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">-->
+    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+            instance.getSelectedValues();
+        });</script>
 </head>
 <body>
-
-<!-- order info -->
-
 <center>
-    <h1>Order Preview</h1>
-    <table width=\"90%\"><tbody><tr><td><b>Product name</b></td><td><b>Unit quantity</b></td><td><b>Unit price</b></td><td><b>Required quantity</b></td><td><b>Subtotal</b></td></tr>
-        <form id='selectedProducts' action='../shopping-cart/deleteFromCart.php' target='cartFrame' method='post'>
+<h1 style="margin: auto">Order Preview</h1>
+    <br>
+<!-- order info -->
+<table class="squeeze-table" style="width: 700px">
+    <tbody>
+    <tr style="margin-bottom: 1%;">
+        <td class="underline"><b>Product</b></td>
+        <td class="underline"><b>Price</b></td>
+        <td class="underline"><b>Quantity</b></td>
+        <td class="underline"><b>Total</b></td>
+    </tr>
 
-<?php
-            $total_quantity = 0;
-            $total_price = 0;
+        <?php
+        $total_quantity = 0;
+        $total_price = 0;
 
-            foreach ($_SESSION["cart"] as $product_id => $item) {
+        foreach ($_SESSION["cart"] as $product_id => $item) {
             print "  <!--name array in input. get key of array.-->
-            <tr>
-                <td>" . $item["product_name"] . "</td>
-                <td>" . $item["product_unit_quantity"] . "</td>
-                <td>$" . $item["product_unit_price"] . "</td>
-                <td>" . $item["selected_quantity"] . "</td>
-                <td>$" . $item["total_price"] . "</td>
-            </tr>";
+        <tr>
+            <td>" . $item["product_name"] . "</td>
+            <td>$" . $item["product_unit_price"] . "</td>
+            <td>" . $item["selected_quantity"] . "</td>
+            <td>$" . $item["total_price"] . "</td>
+        </tr>
+        <tr>
+        <td></td>
+            <td style='color: grey'>" . $item["product_unit_quantity"] . "</td>
+</tr>";
             $total_quantity += $item["selected_quantity"];
             $total_price += $item["total_price"];
-            }
-            ?>
+        }
+        ?>
 
-        </form>
-        <tr>
-            <td colspan="3">Number of products</td>
-            <td align="left" colspan="3" id="num of products"><?php echo $total_quantity ?></td>
-        </tr>
-        <tr>
-            <td colspan="3">Total</td>
-            <td align="left" colspan="3">$<?php echo $total_price ?></td>
-        </tr>
-        </tbody>
-    </table>
+
+    <tr style="margin-top: 1%;">
+        <td colspan="4" class="topline"></td>
+        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$<?php echo $total_price ?></text></td>
+    </tr>
+    </tbody>
+</table>
 
 <!-- end of order -->
 
     <br/>
     <br/>
+
 <label style="font-family: Arial;font-size: xx-large;">Please enter your details for delivery!</label>
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
 <form name="purchaseForm" method="POST" action="purchase.php">
-    <table style="font-family: Arial;">
+    <table style="font-family: Arial, sans-serif; width: 700px;">
         <tr>
             <td>First Name: <span style="color:#FF0000">*</span></td>
             <td><input type="text" name="tFName" id="tFName" required>
@@ -353,14 +367,14 @@ session_start();
         </tr>
         </td>
 
-        <tr>
-            <td>
-                <input type="submit" name="Confirm" value="Purchase">
+        <tr >
+            <td colspan="2">
+                <input type="submit" name="Confirm" value="Purchase" class="yellow-button" style="margin: 20px auto; position: relative;">
         </tr>
         </td>
     </table>
 </form>
-
+</center>
 </body>
 
 </html>
