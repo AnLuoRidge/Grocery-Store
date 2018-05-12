@@ -20,15 +20,16 @@ $postcode = $_POST['tPCode'];
 $date = date("Y/m/d");
 $time = date("h:i:sa");
 ?>
-<p style="font-size: xx-large;">Your Delivery Details</p>
-Name:
+<h1 style="font-size: xx-large;">Your Delivery Details</h1>
+<div style="font-size: 18px;">
+    <p><text style="font-weight: bold;">Name:</text>
 <?php
 echo $_POST['tFName'];
 echo ' ';
 echo $_POST['tLName'];
 ?>
-<br/>
-Delivery address: <b><?php
+</p>
+    <p><text style="font-weight: bold;">Delivery address: </text><?php
     echo $_POST['tAddress'];
     echo ', ';
     echo $_POST['tSuburb'];
@@ -39,12 +40,11 @@ Delivery address: <b><?php
     echo ', ';
     echo $_POST['tPCode'];
 
-    ?>
-    <br/>
-    Email: <?php echo $_POST['email']; ?>
-    <br/>
-
-    <p style="font-size: xx-large;">Thank you for shopping with us! </p>
+    ?></p><p><text style="font-weight: bold;">
+            Email: </text><?php echo $_POST['email']; ?>
+    </p></div>
+<br>
+    <p style="font-size: xx-large;font-style: italic;">Thank you for shopping with us!</p>
 
     <?php
 
