@@ -83,7 +83,7 @@ if (!isset($_SESSION["cart"])) {
 <table class="squeeze-table">
     <tbody>
     <tr style="margin-bottom: 1%;">
-        <td class="underline" style="width:15px"><b>Del</b></td>
+        <td class="underline" style="width:40px"><b>Del</b></td>
         <td class="underline"><b>Product</b></td>
         <td class="underline"><b>Price</b></td>
         <td class="underline"><b>Quantity</b></td>
