@@ -358,7 +358,7 @@ session_start();
         </td>
         <tr>
             <td>Post Code: <span style="color:#FF0000">*</span></td>
-            <td><input type="number" name="tPCode" id="tPCode" required>
+            <td><input type="text" name="tPCode" id="tPCode" required>
         </tr>
         </td>
         <tr>
