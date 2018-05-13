@@ -110,7 +110,7 @@ session_start();
             <td>Country: <span style="color:#FF0000">*</span></td>
             <td>
                 <select name="countries" id="countries" required>
-                    <option value="" selected="selected">Please select a country.</option>
+                    <option value="">Please select a country.</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
                     <option value="Algeria">Algeria</option>
@@ -361,7 +361,7 @@ session_start();
         </td>
         <tr>
             <td>Post Code: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tPCode" id="tPCode" required>
+            <td><input type="number" name="tPCode" id="tPCode" required>
         </tr>
         </td>
         <tr>
