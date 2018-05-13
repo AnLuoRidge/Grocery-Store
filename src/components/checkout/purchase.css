@@ -1,0 +1,14 @@
+div.confirmation{
+ text-align: center;
+    /*margin-left: 20%;*/
+}
+body {
+    font-family: Verdana, arial, helvetica, sans-serif;
+}
+table.deliveryDetail{
+    text-decoration: none;
+    background: inherit;
+    /*color: #ccf;*/
+    font-weight: bold;
+    margin-left: 30%;
+}
