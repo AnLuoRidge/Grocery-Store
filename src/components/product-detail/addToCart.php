@@ -10,22 +10,9 @@
  * array (product_id => product_detail)
  * product_detail = (name, selected_quantity, unit_price, total_price)
  *
- * if the cart not exist
- *  create the cart in SESSION and assign it with the array(id => array (detail))
- * if the cart exist
- *  if product_id not exist
- *      add the id array to the cart. by array["newKey"] = newValue
- *  if product_id exist
- *      += quantity, total value.
- *
- *
- * get num of all products
- *
- * js
- * clear
- * delete
- * checkout
  */
+
+include '../../../config/configuration.php';
 
 $product_id = $_GET["product_id"];
 $selected_quantity = $_POST["selected_quantity"];
@@ -33,7 +20,6 @@ $selected_quantity = $_POST["selected_quantity"];
 // TODO: include configuration.php
 // TODO: do following only when cart id doesn't exist
 // from DB get price and other info
-$connection = mysqli_connect('rerun', 'potiro', 'pcXZb(kL', 'poti');
 $query_string = "select * from products where product_id = " . $product_id;
 $result = mysqli_query($connection, $query_string);
 $num_rows = mysqli_num_rows($result);

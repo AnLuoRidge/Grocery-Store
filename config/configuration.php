@@ -6,6 +6,4 @@
  * Time: 21:35
  */
 
-$addArray = array("city" => "Mexico");
-$addArray["arriv"] = "add";
-print_r($addArray);
+$connection = mysqli_connect('rerun', 'potiro', 'pcXZb(kL', 'poti');

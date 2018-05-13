@@ -74,7 +74,7 @@ session_start();
     <br/>
     <br/>
 
-<h2 style="font-family: Arial;">Please enter your details for delivery!</h2>
+<h2 style="font-family: Helvetica, Arial, sans-serif;">Please enter your details for delivery!</h2>
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
 <form name="purchaseForm" method="POST" action="purchase.php">

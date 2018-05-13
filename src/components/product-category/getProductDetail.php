@@ -1,8 +1,7 @@
 <?php
+include '../../../config/configuration.php';
 
 $product_id = $_GET['product_id'];
-
-$connection = mysqli_connect('rerun', 'potiro', 'pcXZb(kL', 'poti');
 $query_string = "select * from products where product_id = " . $product_id;
 
 $result = mysqli_query($connection, $query_string);
