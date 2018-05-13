@@ -7,14 +7,15 @@
     <title>Grocery Online</title>
 </head>
 
-<frameset cols="50%,*"  style="border-bottom-width: medium;border: #264BBC">
+<frameset cols="50%,*" >
+    <!--style="border:#FFFFFF;border-width: unset"-->
 <!-- Add navigation page path to the source here-->
-    <frame src="components/product-category/product_cat.html" name="productCategoryFrame">
+    <frame src="components/product-category/product_category.html" name="productCategoryFrame" id="productCategoryFrame" frameborder="0">
     <frameset rows="50%,*" >
 <!--Add product details page to the source here-->
-        <frame src="components/product-detail/product_detail.html" name="productDetailFrame" scrolling="yes">
+        <frame src="components/product-detail/product_detail.html" name="productDetailFrame" id="productDetailFrame" frameborder="0">
 <!--Add shopping cart page to the source here-->
-        <frame src="components/shopping-cart/shopping_cart.html" name="cartFrame">
+        <frame src="components/shopping-cart/shopping_cart.html" name="cartFrame" id="cartFrame" frameborder="0">
 
     </frameset>
     <noframes></noframes>
