@@ -59,7 +59,7 @@ foreach ($products_to_delete as $product_id) {
 
     <tr style="margin-top: 1%;">
         <td colspan="4" class="topline"></td>
-        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$<?php echo $total_price ?></text></td>
+        <td class="topline"><span style="font-weight: bold;"><br>Subtotal: </span><span>$<?php echo $total_price ?></span></td>
     </tr>
     </tbody>
 </table>
@@ -81,7 +81,7 @@ foreach ($products_to_delete as $product_id) {
                     return false;
                 }">
 
-    <text id="num of products" style="visibility: hidden"><?php echo $total_quantity ?></text>
+    <span id="num of products" style="visibility: hidden"><?php echo $total_quantity ?></span>
 
 <form id="clearCart" action='../shopping-cart/clearCart.php' method="post" target='cartFrame'></form>
 <form id="checkout" action='../checkout/checkout.php' method="post" target='_blank'></form>

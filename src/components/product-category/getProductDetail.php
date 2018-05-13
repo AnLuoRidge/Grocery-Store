@@ -27,7 +27,7 @@ print "<table border='0'>";
 
 print "
 <tr>
-<td><text class='attributes'>Price: </text><text>" . "$" . $items["unit_price"] . "</text></td>
+<td><span class='attributes'>Price: </span><span>" . "$" . $items["unit_price"] . "</span></td>
 
 </tr>
 

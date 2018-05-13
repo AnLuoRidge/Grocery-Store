@@ -15,6 +15,7 @@ session_start();
 <head>
     <title>Delivery form</title>
     <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">
+    <!-- Materialzecss https://materializecss.com/ -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
@@ -63,7 +64,7 @@ session_start();
 
     <tr style="margin-top: 1%;">
         <td colspan="3" class="topline"></td>
-        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$<?php echo $total_price ?></text></td>
+        <td class="topline"><span style="font-weight: bold;"><br>Subtotal: </span><span>$<?php echo $total_price ?></span></td>
     </tr>
     </tbody>
 </table>

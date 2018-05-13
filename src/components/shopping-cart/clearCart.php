@@ -24,7 +24,7 @@
 
     <tr>
         <td colspan="4" class="topline"></td>
-        <td class="topline"><text style="font-weight: bold;"><br>Subtotal: </text><text>$0</text></td>
+        <td class="topline"><span style="font-weight: bold;"><br>Subtotal: </span><span>$0</span></td>
     </tr>
     </tbody>
 </table>

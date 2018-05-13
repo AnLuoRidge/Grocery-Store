@@ -22,14 +22,14 @@ $time = date("h:i:sa");
 ?>
 <h1 style="font-size: xx-large;">Your Delivery Details</h1>
 <div style="font-size: 18px;">
-    <p><text style="font-weight: bold;">Name:</text>
+    <p><span style="font-weight: bold;">Name:</span>
 <?php
 echo $_POST['tFName'];
 echo ' ';
 echo $_POST['tLName'];
 ?>
 </p>
-    <p><text style="font-weight: bold;">Delivery address: </text><?php
+    <p><span style="font-weight: bold;">Delivery address: </span><?php
     echo $_POST['tAddress'];
     echo ', ';
     echo $_POST['tSuburb'];
@@ -40,8 +40,8 @@ echo $_POST['tLName'];
     echo ', ';
     echo $_POST['tPCode'];
 
-    ?></p><p><text style="font-weight: bold;">
-            Email: </text><?php echo $_POST['email']; ?>
+    ?></p><p><span style="font-weight: bold;">
+            Email: </span><?php echo $_POST['email']; ?>
     </p></div>
 <br>
     <p style="font-size: xx-large;font-style: italic;">Thank you for shopping with us!</p>
