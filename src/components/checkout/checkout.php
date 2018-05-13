@@ -21,7 +21,7 @@ session_start();
 </head>
 <body>
 <center>
-<h1 style="margin: auto">Order Preview</h1>
+<h1>Order Preview</h1>
     <br>
 <!-- order info -->
 <table class="squeeze-table" style="width: 700px">
