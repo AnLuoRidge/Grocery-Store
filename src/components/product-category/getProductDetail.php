@@ -8,58 +8,48 @@ $query_string = "select * from products where product_id = " . $product_id;
 $result = mysqli_query($connection, $query_string);
 $num_rows = mysqli_num_rows($result);
 $items = mysqli_fetch_assoc($result);
+?>
 
-print "<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <title>Product Detail</title>
-    <link href='../product-detail/product-detail.css' rel=\"stylesheet\" type=\"text/css\"/>
-</head>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><?php echo $items["product_name"] ?></title>
+        <link href='../product-detail/product-detail.css' rel="stylesheet" type="text/css">
+    </head>
 <body>
 
-<H1>Product Detail</H1>";
+<div class="center">
+    <h1 style="margin-top: 0%;"><?php echo $items["product_name"] ?></h1>
 
-if ($num_rows > 0) {
-    print "<table border='0'>";
+<?php
+//if ($num_rows > 0) {
+print "<table border='0'>";
 
-    print "
+print "
 <tr>
-<td>Product: </td>
-<td>" . $items["product_name"] . "</td>
+<td><span class='attributes'>Price: </span><span>" . "$" . $items["unit_price"] . "</span></td>
+
 </tr>
 
 <tr>
-<td>Price: </td>
-<td>" . "$" . $items["unit_price"] . "</td>
-</tr>
-
-<tr>
-<td>Unit Quantity: </td>
+<td class='attributes'>Unit Quantity: </td>
 <td>" . $items["unit_quantity"] . "</td>
 </tr>
 
 ";
 
-    print "</table>";
+print "</table>";
 
-    print "<br>
-<table border='0'>
-<tr>
-<form name='addForm' action='../product-detail/addToCart.php?product_id=" . $product_id . "' method='post' target='cartFrame'>
-<td><input type='number' max='20' min='1' name='selected_quantity' value='1' required style='width: 30px'>   /  " . $items["in_stock"] . " available" . "</td>
-
-</tr>
-
-<tr><td>　</td></tr>
-<tr>
-<td>
-<input type='submit' value='Add to cart'>
-</td>
+print "<center>
+<form name='addProdcut' id='addProduct' action='../product-detail/addToCart.php?product_id=" . $product_id . "' method='post' target='cartFrame' style='font-size: 18px;margin-top: 40%;'>
+<input type='number' max='20' min='1' name='selected_quantity' value='1' required class='qty'>     /    " . $items["in_stock"] . " available" . "
 </form>
-</tr>
-</table>
+
+<input type='submit' value='Add to cart' class='button' form='addProduct'>
+</center>
+</div>
 </body>
 </html>";
-}
+
 
 mysqli_close($connection);

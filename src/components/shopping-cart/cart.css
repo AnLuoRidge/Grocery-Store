@@ -1,14 +1,4 @@
-table  {
-    background: #FFEBA9;
-    color:#000;
-    text-align:left;
-    font-size: 14px;
-    border-spacing: 4px;
-    border-left:3px solid #567;
-    border-right:3px solid #000;
-    padding: 3px;
-}
-table a, table, tbody, tfoot, tr, th, td {
+body {
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
@@ -18,14 +8,17 @@ table a {
     color: #ccf;
     font-weight: bold;
 }
+
 table a:link {
     text-decoration: none;
 }
+
 table a:visited {
     background: inherit;
     color: #66c;
     text-decoration: line-through;
 }
+
 table a:hover {
     background: inherit;
     color: #eef;
@@ -34,23 +27,19 @@ table a:hover {
     left: 1px;
     text-decoration: none;
 }
+
 table caption {
-    border-top:1px solid #ddf;
-    border-left:1px solid #ddf;
-    border-right:1px solid #669;
-    border-bottom:1px solid #669;
+    border-top: 1px solid #ddf;
+    border-left: 1px solid #ddf;
+    border-right: 1px solid #669;
+    border-bottom: 1px solid #669;
     text-align: left;
     padding: 3px;
     color: #ccf;
     background: #99f;
     font-family: georgia, "times new roman", serif;
     font-size: 20px;
-    font-weight:bold;
-}
-table, td, th {
-    margin:0px;
-    padding:3px;
-
+    font-weight: bold;
 }
 
 tr.odd {
@@ -58,3 +47,43 @@ tr.odd {
     background: #88e;
 }
 
+.underline {
+    border-bottom: 2px solid #000;
+}
+
+.topline {
+    border-top: 2px solid;
+    font-size: 18px;
+}
+
+.squeeze-table {
+    width: 90%;
+    border: 0px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: auto auto 5% auto;
+}
+
+.yellow-button {
+    height: 40px;
+    width: 230px;
+    color: black;
+    background-color: #f0bc4c;
+    border-radius: 9px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 5%;
+    /*margin-top: -10%;*/
+    /*margin-left: 87%;*/
+}
+
+.black-button {
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
