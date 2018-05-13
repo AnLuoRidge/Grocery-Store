@@ -40,11 +40,12 @@ print "
 print "</table>";
 
 print "<center>
-<form name='addProdcut' id='addProduct' action='../product-detail/addToCart.php?product_id=" . $product_id . "' method='post' target='cartFrame' style='font-size: 18px;margin-top: 40%;'>
+<form name='addProdcut' id='addProduct' action='../product-detail/addToCart.php?product_id=" . $product_id . "' method='post' target='cartFrame' style='font-size: 18px;'>
 <input type='number' max='20' min='1' name='selected_quantity' value='1' required class='qty'>     /    " . $items["in_stock"] . " available" . "
-</form>
+
 
 <input type='submit' value='Add to cart' class='button' form='addProduct'>
+</form>
 </center>
 </div>
 </body>
