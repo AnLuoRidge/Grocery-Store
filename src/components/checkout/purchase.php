@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <!--/**-->
 <!-- * Created by PhpStorm.-->
@@ -8,6 +11,9 @@
 <head>
     <title>My submitted page</title>
     <link href='../checkout/purchase.css' rel="stylesheet" type="text/css"/>
+    <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">
+    <!-- MDUI -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.1/css/mdui.min.css">
 </head>
 <body>
 <?php
@@ -23,8 +29,40 @@ $time = date("h:i:sa");
 ?>
 
 <div class="confirmation" style="font-size: 18px;">
-    <h1 style="align-content: center">Your Delivery Details<h1>
-    <table class="deliveryDetail">
+    <h1>Order Review and Delivery Details</h1>
+    <br>
+    <!-- order info -->
+    <table class="squeeze-table" style="width: 700px">
+        <tbody>
+        <tr style="margin-bottom: 1%;">
+            <td class="underline"><b>Product</b></td>
+            <td class="underline"><b>Price</b></td>
+            <td class="underline"><b>Quantity</b></td>
+            <td class="underline"><b>Total</b></td>
+        </tr>
+
+        <?php
+        $total_quantity = 0;
+        $total_price = 0;
+
+        foreach ($_SESSION["cart"] as $product_id => $item) {
+            print "  <!--name array in input. get key of array.-->
+        <tr>
+            <td>" . $item["product_name"] . "</td>
+            <td>$" . $item["product_unit_price"] . "</td>
+            <td>" . $item["selected_quantity"] . "</td>
+            <td>$" . $item["total_price"] . "</td>
+        </tr>
+        <tr>
+        <td></td>
+            <td style='color: grey'>" . $item["product_unit_quantity"] . "</td>
+</tr>";
+            $total_quantity += $item["selected_quantity"];
+            $total_price += $item["total_price"];
+        }
+
+        ?>
+    <table class="squeeze-table" style="margin-left: 25%">
         <tr>
             <td>
                 Your Name:
@@ -74,11 +112,44 @@ $time = date("h:i:sa");
     $to = $_POST['email'];
     $subject = "Your order details";
 
-    $message = "
-<p>This is a confirmation email of your order.</p>
+    $message .= "
+<h1>This is a confirmation email of your order.</h1>
+<h2>Your order details:</h2>";
+    $message.="
+    <table class=\"squeeze-table\" style=\"width: 700px\">
+        <tbody>
+        <tr style=\"margin-bottom: 1%;\">
+            <td class=\"underline\"><b>Product</b></td>
+            <td class=\"underline\"><b>Price</b></td>
+            <td class=\"underline\"><b>Quantity</b></td>
+            <td class=\"underline\"><b>Total</b></td>
+        </tr>";
 
-<p>Your Delivery Details:</p>
-<table>
+    $message.=   " <tr>";
+//     if(isset($_SESSION['new'])):
+        $total_price = 0;
+        $total_quantity = 0;
+         foreach ($_SESSION["cart"] as $product_id => $item) :
+         $message.= " <td>" . $item["product_name"] . "</td>
+            <td>$" . $item["product_unit_price"] . "</td>
+            <td>" . $item["selected_quantity"] . "</td>
+            <td>$" . $item["total_price"] . "</td>
+        </tr>
+        <tr>
+        <td></td>
+            <td style='color: grey'>" . $item["product_unit_quantity"] . "</td>
+</tr>";
+$total_quantity += $item["selected_quantity"];
+            $total_price += $item["total_price"];endforeach;
+       $message.=" <tr style='margin-top: 1%;'>
+        <td colspan='3' class='topline'></td>
+        <td class='topline'><span style='font-weight: bold;'><br>Subtotal: </span><span>$total_price</span></td>
+    </tr>
+    </tbody>
+</table>";
+
+   $message.="<h2>Your Delivery Details:</h2>
+<table class=\"squeeze-table\" style=\"width: 700px\">
     <tr>
         <td>Your Name:</td>
         <td>$firstName $lastName</td>
@@ -106,6 +177,7 @@ $time = date("h:i:sa");
 </table>
 <p>$date, $time</p>";
 
+
     // Always set content-type when sending HTML email
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -119,3 +191,4 @@ $time = date("h:i:sa");
     ?>
 </body>
 </html>
+ <?php session_destroy(); ?>

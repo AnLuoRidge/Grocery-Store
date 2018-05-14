@@ -52,6 +52,9 @@ session_start();
             $total_quantity += $item["selected_quantity"];
             $total_price += $item["total_price"];
         }
+
+
+       $_SESSION["new"]=$_SESSION["cart"];
         ?>
 
 
@@ -352,7 +355,7 @@ session_start();
         </td>
         <tr>
             <td>Post Code: <span style="color:#FF0000">*</span></td>
-            <td><input class="mdui-textfield-input" type="text" name="tPCode" id="tPCode" required>
+            <td><input class="mdui-textfield-input" type="text" pattern="[0-9]{4}" name="tPCode" id="tPCode" required>
         </tr>
         </td>
         <tr>
@@ -373,4 +376,4 @@ session_start();
 
 </html>
 
-<?php session_destroy(); ?>
+<?php //session_destroy(); ?>
