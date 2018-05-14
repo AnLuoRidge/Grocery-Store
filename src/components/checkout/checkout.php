@@ -14,23 +14,14 @@ session_start();
 
 <head>
     <title>Delivery form</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='../shopping-cart/cart.css' rel="stylesheet" type="text/css">
-    <!-- Materialzecss https://materializecss.com/ -->
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(elems);
-            instance.getSelectedValues();
-        });</script>
+<!-- MDUI -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.1/css/mdui.min.css">
+
 </head>
 <body>
 <center>
-<h1 style="margin: auto">Order Preview</h1>
+<h1>Order Preview</h1>
     <br>
 <!-- order info -->
 <table class="squeeze-table" style="width: 700px">
@@ -80,37 +71,37 @@ session_start();
 <br/>
 <label>Attention: <span style="color:#FF0000">*</span> is required!</label>
 <form name="purchaseForm" method="POST" action="purchase.php">
-    <table style="font-family: Arial, sans-serif; width: 700px;">
+    <table style="font-family: Arial, sans-serif;">
         <tr>
             <td>First Name: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tFName" id="tFName" required>
+            <td><input class="mdui-textfield-input" type="text" name="tFName" id="tFName" required>
         </tr>
         </td>
         <tr>
             <td>Last Name: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tLName" id="tLName" required>
+            <td><input class="mdui-textfield-input" type="text" name="tLName" id="tLName" required>
         </tr>
         </td>
         <tr>
             <td>Address: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tAddress" id="tAddress" required>
+            <td><input class="mdui-textfield-input" type="text" name="tAddress" id="tAddress" required>
         </tr>
         </td>
         <tr>
             <td>Suburb: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tSuburb" id="tSuburb" required>
+            <td><input class="mdui-textfield-input" type="text" name="tSuburb" id="tSuburb" required>
         </tr>
         </td>
         <tr>
             <td>State: <span style="color:#FF0000">*</span></td>
-            <td><input type="text" name="tState" id="tState" required>
+            <td><input class="mdui-textfield-input" type="text" name="tState" id="tState" required>
         </tr>
         </td>
         <tr>
             <td>Country: <span style="color:#FF0000">*</span></td>
             <td>
-                <select name="countries" id="countries" required>
-                    <option value="">Please select a country.</option>
+                <select name="countries" id="countries" required class="mdui-select">
+                    <option value="" selected="selected">Please select a country.</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
                     <option value="Algeria">Algeria</option>
@@ -361,12 +352,12 @@ session_start();
         </td>
         <tr>
             <td>Post Code: <span style="color:#FF0000">*</span></td>
-            <td><input type="number" name="tPCode" id="tPCode" required>
+            <td><input class="mdui-textfield-input" type="text" name="tPCode" id="tPCode" required>
         </tr>
         </td>
         <tr>
             <td>Email: <span style="color:#FF0000">*</span></td>
-            <td><input type="email" name="email" id="email" required>
+            <td><input class="mdui-textfield-input" type="email" name="email" id="email" required>
         </tr>
         </td>
 
