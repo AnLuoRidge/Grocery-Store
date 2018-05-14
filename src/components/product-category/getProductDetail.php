@@ -33,6 +33,12 @@ print "
 <tr>
 <td class='attributes'>Unit Quantity: </td>
 <td>" . $items["unit_quantity"] . "</td>
+
+</tr>
+<tr>
+<td>
+<img src='../product/$product_id.png' width='100px' style='margin: auto;'>
+</td>
 </tr>
 
 ";
